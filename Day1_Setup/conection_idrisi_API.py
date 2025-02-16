@@ -24,4 +24,5 @@ except Exception as e:
 # Set IDRISI working directory path the data folder. If you are using this code, you must update the file path here. 
 IDRISI32.SetWorkingDir("C:/Users/Admin/Desktop/Terrset")
 
+# Display a .rst file this optional and if yu want to try it change, you must update the file path on the command.
 IDRISI32.DisplayFile('Abril-2019/Indices/lswi_abril_2019_pol.rst', 'greyscale')
