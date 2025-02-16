@@ -21,15 +21,11 @@ The project is divided into a daily workflow, where each day focuses on a specif
 Before running the scripts, ensure you have **TerrSet** installed along with Python. The project uses a **Conda environment with Python 3.10**. To set up the environment, navigate to `Day1_Setup` and run:
 
 ```bash
-conda env create -f Day1_Setup/environment.yml
+conda env create -f Day1_Setup/geoterrser-py_env.yml
 conda activate geoterrset
 ```
 
-You may also need additional libraries if installing manually:
 
-```bash
-pip install numpy pandas geopandas rasterio
-```
 
 ## Getting Started
 Each day's folder contains Python scripts and Jupyter Notebooks explaining the functionality. Simply navigate to the desired day and run the scripts.
