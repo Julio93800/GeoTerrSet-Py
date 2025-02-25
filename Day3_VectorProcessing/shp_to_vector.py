@@ -33,9 +33,12 @@ output_vct_file = "geom_humedal_update.vct"
 # The parameters for each module can be found in the ‘macro command’ link in the help of each module. 
 # eg. IDRISI32.RunModule("MODULE",'your_command_here', 1, "", "", "", "", 1) 
 # =============================================================================
+output_ref_file = r"C:/Program Files (x86)/TerrSet_liberaGIS/Georef/UTM-16N.ref"# Change this if you're using a specific reference file
 
 # Create the command
-shp_to_vct_command = f"1*{shp_path}*{output_vct_file}*Utm-16n*m*1"
+shp_to_vct_command = f"1*{shp_path}*{output_vct_file}*{output_ref_file}*m*1"
+
+
 
 # Check if the file alredy exist-
 if not os.path.isfile('C:/Users/Admin/Desktop/Terrset/geom_humedal_update.vct'):
@@ -46,6 +49,30 @@ if not os.path.isfile('C:/Users/Admin/Desktop/Terrset/geom_humedal_update.vct'):
 
 else:
     print("The file already exist.")
+
+
+# Before creating the vector file, the next step is to define the file's reference system.
+
+# Define the projected output file name
+output_vct_project_file = "C:/Users/Admin/Desktop/Terrset/geom_humedal_project.vct"
+
+# Define the output reference file (coordinate system)
+output_ref_file = r"C:/Program Files (x86)/TerrSet_liberaGIS/Georef/UTM-16N.ref"# Change this if you're using a specific reference file
+
+# Create the PROJECT module command
+project_command = f"2*{output_vct_file}*{output_ref_file}*{output_vct_project_file}*UTM-16N"
+
+# Run the PROJECT module in IDRISI
+IDRISI32.RunModule("PROJECT", project_command, 1, "", "", "", "", 1)
+
+
+
+
+
+
+
+
+
 
 
 
