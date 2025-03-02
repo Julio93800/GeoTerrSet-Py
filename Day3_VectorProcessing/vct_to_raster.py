@@ -19,11 +19,14 @@ IDRISI32 = win32com.client.Dispatch('IDRISI32.IdrisiAPIServer')
 # Set IDRISI working directory path the data folder. If you are using this code, you must update the file path here. 
 IDRISI32.SetWorkingDir("C:/Users/Admin/Desktop/Terrset")
 
-# Now, need to add the file path
+# Now, need to add the vector file path
 vct_path = "Vector/geom_humedal_update.vct"
 
-# Declare the output vector file
-output_rst_file = "Abril-2019/Reflectancias/T16QDJ_20190422T160911_B01_DOS_Reflectance.rst"
+# Raster output path
+output_file = 'geom_humedal_update.rst'
+
+# Declare the reference raster 
+raster_base = "Abril-2019/Reflectancias/T16QDJ_20190422T160911_B01_DOS_Reflectance.rst"
 
 # =============================================================================
 # To transform a vector into an IDRISI raster file, we need two layers:
@@ -35,7 +38,7 @@ output_rst_file = "Abril-2019/Reflectancias/T16QDJ_20190422T160911_B01_DOS_Refle
 # =============================================================================
 
 # Create the command
-vct_to_rst_command = f"1*3*{vct_path}*{output_rst_file}*3"
+vct_to_rst_command = f"1*3*{vct_path}*{vct_path}*3"
 
 # Check if the file alredy exist-
 if not os.path.isfile('C:/Users/Admin/Desktop/Terrset/geom_humedal_update.rst'):
