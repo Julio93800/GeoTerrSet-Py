@@ -29,7 +29,7 @@ import re
 # Define the base directory where raster data is located
 base_dir = "C:/Users/Admin/Desktop/Terrset"
 
-# Define the path to the mask raster file
+# Define the path of the mask
 mask_path = "C:/Users/Admin/Desktop/Terrset/Vector/geom_humedal_update.rst"
 
 # Load the mask raster
